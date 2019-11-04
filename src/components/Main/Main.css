@@ -1,0 +1,51 @@
+.main-container {
+  height: 100vh;
+}
+.jumbotron {
+  width: 100%;
+  margin-top: 5rem;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  background-color: rgba(239, 228, 255, 0.7);
+}
+.day {
+  background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
+}
+.night {
+  background-image: linear-gradient(to top, #4ea1a1 0%, #4a2f88 100%);
+}
+.weather-icon-container {
+  height: 150px;
+  overflow: hidden;
+}
+.icon {
+  width: 70px;
+}
+p {
+  margin: 0;
+}
+.list-group-item {
+  background-color: transparent;
+}
+
+@media (min-width: 768px) {
+  .jumbotron {
+    width: 70%;
+  }
+  .weather-icon-container {
+    height: 250px;
+  }
+  p {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .jumbotron {
+    width: 60%;
+  }
+  .list-group {
+    width: 60%;
+    margin: auto;
+  }
+}
