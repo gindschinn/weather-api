@@ -15,12 +15,17 @@ function App() {
   const getWeatherData = async () => {
     try {
       const response = await axios.get(URL);
-      console.log(response.data);
       setWeatherData(response.data);
       setCity("");
     } catch (error) {
       if (error.response.status === 404) {
         alert("Can't get data. Please check your entered city name");
+        console.log(error);
+      } else if (
+        error.response.status === 500 ||
+        error.response.status === 503
+      ) {
+        alert("Server currently not available. Please try later");
         console.log(error);
       }
     }
