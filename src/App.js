@@ -19,13 +19,15 @@ function App() {
       setCity("");
     } catch (error) {
       if (error.response.status === 404) {
-        alert("Can't get data. Please check your entered city name");
+        alert("Can't get data. Please check the entered city name");
         console.log(error);
       } else if (
         error.response.status === 500 ||
         error.response.status === 503
       ) {
         alert("Server currently not available. Please try later");
+        console.log(error);
+      } else {
         console.log(error);
       }
     }
@@ -39,7 +41,7 @@ function App() {
     setCity(event.target.value);
   };
 
-  const getNewCityHandler = event => {
+  const newCityHandler = event => {
     event.preventDefault();
     setQuery(city);
   };
@@ -52,7 +54,7 @@ function App() {
     <div className="App">
       <Navbar
         cityInputChanged={changeCityInputHandler}
-        getNewCity={getNewCityHandler}
+        getNewCity={newCityHandler}
         location={city}
       />
       {!weatherData ? (
